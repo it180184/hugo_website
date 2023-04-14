@@ -1,0 +1,11 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: Meine Website
+theme: "PaperMod"
+
+params:
+  defaultTheme: dark
+  disableThemeToggle: true
+  homeInfoParams:
+    Title: Hallo!
+    Content: Dies ist eine kleine Website über Fabian Ettinger

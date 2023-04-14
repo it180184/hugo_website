@@ -1,0 +1,13 @@
+{{- define "main" }}
+<h1>{{.Title}}</h1>
+<p>{{.Content}}</p>
+<br />
+<ul>
+    {{ $response := getJSON "https://jsonplaceholder.typicode.com/posts" }}
+    {{ range $item := $response }}
+    <li class="item">
+        {{ $item.title }}
+    </li>
+</ul>
+{{ end }}
+{{- end }}{{/* end main */ -}}
