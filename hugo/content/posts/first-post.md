@@ -15,4 +15,4 @@ Diese Seite ist eine kleine Hugo Demo Seite, die im Rahmen des **Mobile Computin
 Sie beinhaltet eine kleine Demonstration, wie eine Hugo Seite aussehen kann und wird automatisch mittels Kubernetes deployt.
 
 ## Eine Demo zum Laden von Daten
-[Demo-List](/posts/test/)
+[Demo-List](../test/)
