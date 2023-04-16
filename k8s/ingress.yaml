@@ -12,21 +12,21 @@ spec:
     - host: student.cloud.htl-leonding.ac.at
       http:
         paths:
-          - path: /m.pouget/(api/quiz-game-websocket.*)
+          - path: /f.ettinger/(api/quiz-game-websocket.*)
             pathType: Prefix
             backend:
               service:
                 name: quarkus
                 port:
                   number: 8080
-          - path: /m.pouget
+          - path: /f.ettinger
             pathType: Prefix
             backend:
               service:
                 name: nginx
                 port:
                   number: 80
-          - path: /m.pouget/(.*)$
+          - path: /f.ettinger/(.*)$
             pathType: Prefix
             backend:
               service:
