@@ -125,11 +125,17 @@
 </table>
 
 <script>
-
-    axios
-        .get("https://student.cloud.htl-leonding.ac.at/f.ettinger/api/skills")
-        .then(function (response) {
-            var skills = response.data;
+    fetch('https://student.cloud.htl-leonding.ac.at/f.ettinger/api/skills', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+        },
+    })
+        .then(response => {
+            console.log(response);
+            return response.json();
+        })
+        .then((skills) => {
             var tableBody = document.querySelector("#myTable tbody");
             skills.forEach(function (skill) {
                 var row = document.createElement("tr");

@@ -7,5 +7,5 @@
 
 insert into skill (id, name, imgUrl)
 values(nextval('hibernate_sequence'), 'kubernetes', 'https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg'),
-      (nextval('hibernate_sequence'), 'Kotlin', 'https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg'),
+      (nextval('hibernate_sequence'), 'Kotlin', 'https://logowik.com/content/uploads/images/kotlin.jpg'),
       (nextval('hibernate_sequence'), 'Swift', 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Swift_logo.svg/1024px-Swift_logo.svg.png');

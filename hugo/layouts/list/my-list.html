@@ -20,9 +20,11 @@
             'Accept': 'application/json',
         },
     })
-        .then(response => response.json())
-        .then((response) => {
-            var skills = response.data;
+        .then(response => {
+            console.log(response);
+            return response.json();
+        })
+        .then((skills) => {
             var tableBody = document.querySelector("#myTable tbody");
             skills.forEach(function (skill) {
                 var row = document.createElement("tr");
