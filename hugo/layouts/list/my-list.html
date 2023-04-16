@@ -2,12 +2,41 @@
 <h1>{{.Title}}</h1>
 <p>{{.Content}}</p>
 <br />
-<ul>
-    {{ $response := getJSON "https://jsonplaceholder.typicode.com/posts" }}
-    {{ range $item := $response }}
-    <li class="item">
-        {{ $item.title }}
-    </li>
-</ul>
-{{ end }}
+
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>Skill</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script>
+    fetch('https://student.cloud.htl-leonding.ac.at/f.ettinger/api/skills', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+        },
+    })
+        .then(response => response.json())
+        .then((response) => {
+            var skills = response.data;
+            var tableBody = document.querySelector("#myTable tbody");
+            skills.forEach(function (skill) {
+                var row = document.createElement("tr");
+                var skillCell = document.createElement("td");
+                var imageUrlCell = document.createElement("td");
+                skillCell.textContent = skill.name;
+                imageUrlCell.innerHTML = `<img width="200" src="${skill.imgUrl}">`;
+                row.appendChild(skillCell);
+                row.appendChild(imageUrlCell);
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+</script>
 {{- end }}{{/* end main */ -}}

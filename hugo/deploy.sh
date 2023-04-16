@@ -18,5 +18,6 @@ waitForPod knife
 
 echo "copy to student-f-ettinger..."
 kubectl -n student-f-ettinger exec $KNIFE_POD -- rm -rf /srv/demo /srv/public
-kubectl -n student-f-ettinger cp ./public $KNIFE_POD:/srv/
+kubectl -n student-f-ettinger cp ./public $KNIFE_POD:/srv/public
+kubectl -n student-f-ettinger exec $KNIFE_POD -- ls /srv/
 kubectl -n student-f-ettinger exec $KNIFE_POD -- mv /srv/public /srv/demo
